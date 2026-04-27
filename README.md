@@ -127,19 +127,6 @@ Execute:
 App.java
 ```
 
----
-
-## 💻 Sample Output
-
-```text
-Residential Address Address(...)
-Shipping Address Address(...)
-
-Customer1 Customer(...)
-Customer2 Customer(...)
-```
-
----
 
 ## 📚 Concepts Practiced
 
