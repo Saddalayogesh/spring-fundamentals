@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="residential_address" class="com.java.spring.model.Address">
+
+        <constructor-arg><value>kphb5thphase</value></constructor-arg>
+        <constructor-arg><value>Hyderabad</value></constructor-arg>
+        <constructor-arg><value>Telangana</value></constructor-arg>
+
+    </bean>
+
+    <bean id="shipping_address" class="com.java.spring.model.Address">
+
+        <constructor-arg><value>kphb6thphase</value></constructor-arg>
+        <constructor-arg><value>Secunderabad</value></constructor-arg>
+        <constructor-arg><value>Telangana</value></constructor-arg>
+
+    </bean>
+
+<bean id="customer1" class="com.java.spring.model.Customer" scope="singleton" lazy-init="true">
+    <constructor-arg index="0" type="int" value="1"/>
+    <constructor-arg index="1" type="java.lang.String" value="customer1"/>
+    <constructor-arg index="2" type="java.lang.String" value="customer@gmail.com"/>
+    <constructor-arg index="3" type="java.lang.String" value="6300075885"/>
+    <constructor-arg index="4" type="java.util.List">
+    <list>
+        <ref bean ="residential_address"/>
+        <ref bean ="shipping_address"/>
+    </list>
+</constructor-arg>
+</bean>
+    <bean id="customer2" class="com.java.spring.model.Customer" scope="prototype" lazy-init="true">
+    <constructor-arg index="0" type="int" value="1"/>
+    <constructor-arg index="1" type="java.lang.String" value="customer2"/>
+    <constructor-arg index="2" type="java.lang.String" value="customer2@gmail.com"/>
+    <constructor-arg index="3" type="java.lang.String" value="6300075995"/>
+    <constructor-arg index="4" type="java.util.List">
+        <list>
+            <ref bean ="residential_address"/>
+            <ref bean ="shipping_address"/>
+        </list>
+    </constructor-arg>
+    </bean>
+
+</beans>
